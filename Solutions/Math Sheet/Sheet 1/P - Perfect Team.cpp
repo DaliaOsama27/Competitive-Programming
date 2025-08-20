@@ -126,6 +126,47 @@ int main()
 
 
 }
+///// correct solution 
+//وَمَن رامَ العُلا مِن غَيرِ كَدٍ
+//أضاعَ العُمرَ في طَلَبِ المُحالِ
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define vi vector<int>
+#define vl vector<ll>
+ll mod=1e9+7;
+bool isPossible(ll c, ll m, ll x, ll k) {
+    return c >= k && m >= k && (c+m+x) >= 3*k;
+}
+
+void Dalia()
+{
+    ll c, m, x;
+    cin >> c >> m >> x;
+    ll n = (c+m+x)/3;
+    ll l = 0, r = n+1, mid;
+    // TTTTTTFFFF -->> find the last occurrence of T;
+    while(r-l > 1){
+        mid = (l+r)/2;
+        if(isPossible(c, m, x, mid)) l = mid;
+        else r = mid - 1;
+    }
+    if(isPossible(c, m, x, r)) cout << r << endl;
+    else cout << l << endl;
+}
+
+int main()
+{
+    int t=1;
+   cin>>t;
+    while(t--)
+    {
+        Dalia();
+    }
+
+
+}
+
 
 
 
