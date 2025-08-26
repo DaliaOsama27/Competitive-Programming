@@ -25,7 +25,7 @@ void Dalia(){
 void Dalia(); 
 
 signed main() {
-    kemo();
+    Dalia();
   //  int t; cin>>t; while(t--)
 
     freopen("cowsignal.in","r",stdin);
